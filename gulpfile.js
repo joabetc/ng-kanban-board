@@ -34,7 +34,8 @@ var PATH = {
   SOURCE: './src/',
   TEST: './test/',
   DEMO: './demo/',
-  DIST: './dist/'
+  DIST: './dist/',
+  EMBED: './embed'
 };
 
 var SOURCE = {
@@ -106,8 +107,16 @@ gulp.task('banner', function() {
     .pipe(gulp.dest(PATH.DIST));
 });
 
+gulp.task('embed', function() {
+  return gulp.src(SOURCE.SCRIPTS + '*.component.js')
+    .pipe(embed())
+    .pipe(gulp.dest(PATH.EMBED));
+})
+
 gulp.task('webpack', function() {
-  return gulp.src(SOURCE.SCRIPTS + '*.js')
+  return gulp.src([
+      SOURCE.SCRIPTS + '*.js',
+      PATH.EMBED + '*.component.js'])
     .pipe(webpack({
       output: {
         path: __dirname + PATH.DEMO.substr(1),

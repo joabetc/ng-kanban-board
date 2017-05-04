@@ -1,0 +1,25 @@
+@media (min-width: 992px) {
+  .equal, .equal > div[class*='col-'] {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex: 1 1 auto; } }
+
+.panel {
+  width: 100%; }
+
+.middle-panel {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px; }
+
+.left-panel {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; }
+
+.right-panel {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; }

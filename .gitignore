@@ -4,3 +4,5 @@ coverage
 demo/bundle.js
 .tmp
 .sass-cache
+embed
+npm-debug.log

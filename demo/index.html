@@ -15,6 +15,6 @@
 
 </head>
 <body ng-app="demoApp" ng-controller="demoMainController" ng-cloak>
-  <test-directive></test-directive>
+  <ng-kanban-board tasks="kabanData" columns="status" on-update="updateStories($event)"></ng-kanban-board>
 </body>
 </html>

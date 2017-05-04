@@ -1,6 +1,8 @@
+'use strict';
+
 import templateUrl from './ng-kanban-board.template.html';
 
-export const ngKanbanBoard = {
+export const ngKanbanBoardComponent = {
 	bindings: {
 		tasks: '<',
 		columns: '<',
@@ -8,40 +10,34 @@ export const ngKanbanBoard = {
 	},
 	templateUrl,
 	controller: class ngKanbanBoard {
-		constructor(ngKanbanBoardService, $log) {
+		constructor($log) {
 			'ngInject';
-			this.kanbanBoardService = ngKanbanBoardService;
 		}
 
 		$onInit() {
-			this.lanes = [];
-			this.stories = [];
 			this.isLoading = false;
 		}
 
-		saveStory = storyToSave => {
+		saveTask(taskToSave) {
 			this.onUpdate(
 			{
 				$event: {
-					story: storyToSave
+					story: taskToSave
 				}
 			});
 		}
 
-		onDrop = (data, targetLaneId) => {
-			this.ngKanbanBoardService.moveStory(data, targetLaneId).then(storyMoved => {
-				angular.forEach(this.stories, story => {
-					if (story._id === storyMoved._id) {
-						story.status = storyMoved.status;
-						saveTask(angular.copy(story));
-					}
-				});
-			}, onError);
+		onDrop(data, targetColId) {
+			
 		}
 
-		const onError = errorMessage => {
+		modeTask() {
+
+		}
+
+		onError(errorMessage) {
 			this.isLoading = false;
 			$log(errorMessage);
 		}
 	}
-}
+};

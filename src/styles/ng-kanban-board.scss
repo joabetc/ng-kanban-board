@@ -1,11 +1,4 @@
-$module: 'ng-kanban-board';
-$min-width: 992px;
-
-.#{$module} {
-  display: block;
-}
-
-@media (min-width: $min-width) {
+@media (min-width: 992px) {
     .equal, .equal > div[class*='col-'] {  
         display: -webkit-box;
         display: -moz-box;

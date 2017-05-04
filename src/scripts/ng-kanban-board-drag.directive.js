@@ -1,4 +1,6 @@
-import angular 'angular';
+'use strict';
+
+import angular from '../../bower_components/angular';
 
 export const ngKanbanBoardDrag = () => {
 	'ngInject';
@@ -12,7 +14,7 @@ export const ngKanbanBoardDrag = () => {
 
 			element.bind('dragstart', event => {
 				event.dataTransfer.setData('Text', angular.toJson(dragData));
-			})
+			});
 		}
-	}
-}
+	};
+};

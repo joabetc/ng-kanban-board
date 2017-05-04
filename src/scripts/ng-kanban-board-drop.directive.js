@@ -1,6 +1,8 @@
-import angular from 'angular';
+'use strict';
 
-export const ngKanbanBoardDrop =  = () => {
+import angular from '../../bower_components/angular';
+
+export const ngKanbanBoardDrop = () => {
 	'ngInject';
 	return {
 		restrict: 'A',
@@ -35,7 +37,7 @@ export const ngKanbanBoardDrop =  = () => {
 
 			element.bind('dragleave', () => {
 				element.removeClass(dragOverClass);
-			})
+			});
 		}
-	}
-}
+	};
+};
