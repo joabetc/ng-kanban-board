@@ -1,4 +1,4 @@
-# ng-kanban-board
+# ng-kanban-board (in progress)
 
 An AngularJS Kanban Board Component
 
